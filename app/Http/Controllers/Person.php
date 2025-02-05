@@ -76,4 +76,8 @@ class Person extends Controller
 
     }
 
+    public function end(){
+        return view('person.end');
+    }
+
 }
