@@ -12,7 +12,7 @@ class Person extends Controller
         if (! $request->hasValidSignature()) {
             abort(401);
         }
-        $url=URL::temporarySignedRoute('person.index',now()->addDays(7),['id'=>$id]);
+        $url=URL::temporarySignedRoute('person.show',now()->addDays(7),['id'=>$id]);
         return view(('person.show'), compact('id', 'url'));
 
     }
