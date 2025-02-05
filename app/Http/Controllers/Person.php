@@ -60,7 +60,10 @@ class Person extends Controller
         $headers[] = 'Authorization: b71577c620cb3ffc84305c5e8d045e065c1b94ee';
         $headers[] = 'Content-Type: text/plain';
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
+        $response = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
         curl_close($ch);
 
        return redirect('/');
