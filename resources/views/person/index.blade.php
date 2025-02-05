@@ -19,7 +19,7 @@
         <h2 class="ml-3 font-bold text-4xl max-w-80 sm:text-2xl text-[#414142]">Вам понравилась работа команды алатарцев недвижимость?</h2>
         <p class="text-neutral-500 m-3 mt-0 text-xs">Поделитесь своим мнением с другими людьми</p>
         <div class="m-6 ml-3">
-            <a href="/" class="p-3 border-2 rounded-2xl">да, все отлично</a>
+            <a href="/" class="p-3 border-2 rounded-2xl">Да, все отлично</a>
         </div>
         <br>
         <div class="m-6 mt-0 ml-3">

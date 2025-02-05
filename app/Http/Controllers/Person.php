@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\URL;
 
 class Person extends Controller
 {
-    public function index(int $id, Request $request){
+    public function index($id, Request $request){
         if (! $request->hasValidSignature()) {
             abort(401);
         }
@@ -17,14 +17,14 @@ class Person extends Controller
 
     }
 
-    public function show(int $id, request $request){
+    public function show($id, request $request){
         if (! $request->hasValidSignature()) {
             abort(401);
         }
         return view(('person.show'), compact('id'));
     }
 
-    public function create(request $request, int $id){
+    public function create(request $request, $id){
         $text=$request->input('review');
         $url='http://ana.intrumnet.com:81/sharedapi/purchaser/filter';
 
