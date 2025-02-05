@@ -42,7 +42,7 @@ class Person extends Controller
         $phone=$result['data']['list'][0]['phone'][0]['phone'];
 
         $message_json = json_encode([
-            "recipient" => 79996194533,
+            "recipient" => "79996194533",
             "body" => "Негативный отзыв от клиента:
             '".$text."'
             Ссылка whatsapp: https://api.whatsapp.com/send?phone=".$phone."
