@@ -16,7 +16,8 @@ class Person extends Controller
     }
 
     public function show(int $id){
-        dd(back()->withInput());
+        dd(back()->withInput('location'));
+
         return view(('person.show'), compact('id'));
     }
 
