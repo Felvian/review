@@ -72,7 +72,7 @@ class Person extends Controller
         }
         curl_close($ch);
 
-       return redirect(view('/thanks'));
+       return redirect(view(route('person.thanks')));
 
     }
 

@@ -11,4 +11,4 @@ Route::get('/{id}/sms', [\App\Http\Controllers\Person::class,'show'])->name('per
 Route::post('/{id}/result',[App\Http\Controllers\Person::class,'create'])->name('person.create')->where('id', '[0-9]+');
 Route::get('/thanks', function (){
     return view('person.thanks');
-});
+})->name('person.thanks');
