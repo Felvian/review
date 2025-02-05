@@ -7,8 +7,12 @@ use Illuminate\Support\Facades\URL;
 
 class ApiURL extends Controller
 {
-    public function index($id)
+    public function index($id, request $request)
     {
-        return URL::signedRoute('person.index',['id'=>$id]);
+        dd($request);
+        $key=$request;
+        if ($key!='4a8f22d183adbdd7b4adcaa7d7a935fe')
+            abort(401);
+        return URL::temporarySignedRoute('person.index',now()->addDays(7),['id'=>$id]);
     }
 }
