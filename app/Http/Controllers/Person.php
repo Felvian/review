@@ -62,8 +62,8 @@ class Person extends Controller
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
         curl_close($ch);
-        dd($id);
-       return redirect('/end');
+
+       return redirect('/');
 
     }
 
