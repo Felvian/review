@@ -13,7 +13,7 @@ class Person extends Controller
             abort(401);
         }
         $url=URL::temporarySignedRoute('person.show',now()->addDays(7),['id'=>$id]);
-        return view(('person.show'), compact('id', 'url'));
+        return view(('person.index'), compact('id', 'url'));
 
     }
 
