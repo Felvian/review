@@ -23,7 +23,7 @@
         </div>
         <br>
         <div class="m-6 mt-0 ml-3">
-            <a href="{{route('person.show', $id)}}" class="p-3 border-2 rounded-2xl">Нет, есть претензии</a>
+            <a href="{{$url}}" class="p-3 border-2 rounded-2xl">Нет, есть претензии</a>
         </div>
     </div>
 </body>

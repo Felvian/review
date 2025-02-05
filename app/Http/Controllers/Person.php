@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 
 
 class Person extends Controller
@@ -11,12 +12,12 @@ class Person extends Controller
         if (! $request->hasValidSignature()) {
             abort(401);
         }
-        return view(('person.index'), compact('id'));
+        $url=URL::temporarySignedRoute('person.index',now()->addDays(7),['id'=>$id]);
+        return view(('person.index'), compact('id', 'url'));
 
     }
 
     public function show(int $id){
-        dd(back()->withInput());
 
         return view(('person.show'), compact('id'));
     }
