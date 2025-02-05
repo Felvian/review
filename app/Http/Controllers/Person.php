@@ -13,12 +13,14 @@ class Person extends Controller
             abort(401);
         }
         $url=URL::temporarySignedRoute('person.index',now()->addDays(7),['id'=>$id]);
-        return view(('person.index'), compact('id', 'url'));
+        return view(('person.show'), compact('id', 'url'));
 
     }
 
-    public function show(int $id){
-
+    public function show(int $id, request $request){
+        if (! $request->hasValidSignature()) {
+            abort(401);
+        }
         return view(('person.show'), compact('id'));
     }
 
