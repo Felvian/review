@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 
 class Person extends Controller
 {
-    public function index(int $id){
-
+    public function index(int $id, Request $request){
+        if (! $request->hasValidSignature()) {
+            abort(401);
+        }
         return view(('person.index'), compact('id'));
 
     }
@@ -44,10 +46,9 @@ class Person extends Controller
         $message_json = json_encode([
             "recipient" => "79996194533",
             "body" => "Негативный отзыв от клиента:
-            '".$text."'
-            Ссылка whatsapp: https://api.whatsapp.com/send?phone=".$phone."
-            Ссылка интрум: https://ana.intrumnet.com/crm/tools/exec/customer/".$id."#customer
-            ",
+'".$text."'
+Ссылка whatsapp: https://api.whatsapp.com/send?phone=".$phone."
+Ссылка интрум: https://ana.intrumnet.com/crm/tools/exec/customer/".$id."#customer",
         ]);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://wappi.pro/api/sync/message/send?profile_id=604548a8-23c0');
