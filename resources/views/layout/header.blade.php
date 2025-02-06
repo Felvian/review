@@ -1,5 +1,4 @@
 
-@section('header')
 <!doctype html>
 <html lang="RU">
 <head>
@@ -11,4 +10,4 @@
     @vite('resources/css/app.css')
     <title>Отзывы Алатрацев.Недвижимость</title>
 </head>
-@endsection
+
