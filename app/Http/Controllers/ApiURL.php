@@ -13,7 +13,7 @@ class ApiURL extends Controller
         $key=$request->input('key');
 
         if ($key!='4a8f22d183adbdd7b4adcaa7d7a935fe')
-            abort(401);
+            return 'error 401';
         return response()->json(['url'=>URL::temporarySignedRoute('person.index',now()->addDays(7),['id'=>$id])]);
     }
 }
